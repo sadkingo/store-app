@@ -1,0 +1,101 @@
+.customSwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.customSwiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.customSwiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.customSwiper {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.customSwiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.mycustomSwiper2 {
+    height: 80%;
+    width: 100%;
+}
+
+.mycustomSwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.mycustomSwiper .customSwiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.mycustomSwiper .customSwiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.customSwiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.orangeBg {
+    background-color: var(--first-color);
+}
+
+.colorOrange {
+    color: var(--first-color);
+}
+
+.dark-theme .pagination .page-link {
+    color: #ffffff;
+    background-color: hsl(0, 0%, 24%);
+    border-color: hsl(0, 0%, 24%);
+}
+
+.pagination .page-link:focus,
+.pagination .page-link:hover {
+    background-color: hsl(31, 100%, 70%);
+    /* New background color on focus/hover */
+    border-color: hsl(31, 100%, 70%);
+    /* New border color on focus/hover */
+    box-shadow: none;
+    /* Remove default box shadow */
+}
+.active>.page-link, .page-link.active {
+    background-color: hsl(31, 100%, 70%);
+    border-color: hsl(31, 100%, 70%);
+}
+.dark-theme .pagination .page-item.active .page-link {
+    background-color: hsl(31, 100%, 70%);
+    border-color: hsl(31, 100%, 70%);
+}
+
+.page-link {
+    color: hsl(31, 100%, 70%);
+}
+
+.page-link:hover {
+    color: white;
+}
