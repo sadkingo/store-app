@@ -1,9 +1,9 @@
 <header class="header" id="header">
-    <nav class="nav container">
+    <nav class="nav container px-md-0 px-5">
         <a href="{{ route('home') }}" class="nav__logo">
             <i class='bx bxs-watch nav__logo-icon'></i> Rolex
         </a>
-        <div class="nav__menu" id="nav-menu">
+        <div class="nav__menu d-flex" id="nav-menu">
             <ul class="nav__list">
                 <li class="nav__item">
                     <a href="{{ route('home') . '#home' }}" class="nav__link">Home</a>
@@ -21,7 +21,34 @@
             <div class="nav__close" id="nav-close">
                 <i class='bx bx-x'></i>
             </div>
+            @guest
+                <ul class="nav__list ms-md-5">
+                    <li class="nav__item ms-md-25">
+                        <a href="{{ route('login') }}" class="nav__link">Login</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ route('register') }}" class="nav__link">Register</a>
+                    </li>
+                </ul>
+            @endguest
         </div>
+        @auth
+            <div class="dropdown float-end nav__btns">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32"
+                        class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="{{ route('logout') }}">Sign out</a></li>
+                </ul>
+            </div>
+        @endauth
         <div class="nav__btns">
             <i class='bx bx-moon testimonial__perfil-name' style="cursor: pointer;" id="theme-button"></i>
             <div class="nav__shop" id="cart-shop">
