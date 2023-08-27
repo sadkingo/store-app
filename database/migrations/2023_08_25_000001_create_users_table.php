@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('city_id');
             $table->string('address');
             $table->string('phone');
-            $table->string('user_type');
+            $table->enum('user_type',['user','admin'])->default('user');
             $table->softDeletes();
             $table->timestamps();
             $table->enum('status', ['approved', 'pending', 'rejected', 'cancelled']);
