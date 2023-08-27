@@ -99,3 +99,36 @@
 .page-link:hover {
     color: white;
 }
+
+.mt-25{
+    margin-top: 250px;
+}
+.mb-25{
+    margin-bottom: 250px;
+}
+
+.btn {
+    background-color:hsl(31, 100%, 60%);
+    border-color: hsl(31, 100%, 60%);
+}
+.btn:hover {
+    background-color:hsl(31, 100%, 70%);
+    border-color: hsl(31, 100%, 70%);
+}
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    background-color:hsl(31, 100%, 60%);
+    border-color: hsl(31, 100%, 60%);
+}
+@media only screen and (min-width: 768px) {
+    .ms-md-25{
+        margin-left: 20%;
+    }
+}
+
+.filter-option-inner-inner{
+    color: white;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: hsl(31, 100%, 60%);
+}
