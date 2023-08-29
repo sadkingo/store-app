@@ -204,7 +204,7 @@ try {
 } catch (error) {}
 
 /*Cart functions*/
-let cart = JSON.parse(localStorage.getItem("CART")) || [];
+let cart = JSON.parse(localStorage.getItem("CART"+logedInUser)) || [];
 updateCart();
 
 function addToCart(id) {
@@ -231,7 +231,7 @@ function updateCart() {
     renderCartItems();
     renderSubtotal();
 
-    localStorage.setItem("CART", JSON.stringify(cart));
+    localStorage.setItem("CART"+logedInUser, JSON.stringify(cart));
 }
 
 function renderSubtotal() {
@@ -317,3 +317,48 @@ var swiper2 = new Swiper(".mySwiper2", {
         swiper: swiper,
     },
 });
+// // // // //
+function updateCartHTML() {
+    // Get the container element to fill
+    var container = document.querySelector('.col-25 .container');
+    var totalPriceElement = document.querySelector('.price b');
+    let totalElemts = 0;
+    // Loop through the cart data and generate HTML for each item
+    for (var i = 0; i < cart.length; i++) {
+        var item = cart[i];
+        totalElemts += 1 * item.numberOfUnits;
+        var itemHTML = `<p><a href="#">${item.title}</a> <span class="price">${item.numberOfUnits} x $${item.price}</span></p>`;
+        container.insertAdjacentHTML('beforeend', itemHTML);
+    }
+    // Calculate and add the total price
+    var totalPrice = cart.reduce((total, item) => total + item.price * item.numberOfUnits, 0);
+    var totalHTML = `<hr><p>Total <span class="price"><b>$${totalPrice}</b></span></p>`;
+    container.insertAdjacentHTML('beforeend', totalHTML);
+    totalPriceElement.textContent = totalElemts;
+}
+
+// sending data to route('cart') Post
+function sendCart() {
+    fetch('http://shop.test/cart', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(cart),
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        }).then(data => {
+            if (data.startsWith("cart has ben added:")){
+                cart = [];
+                updateCart();
+                window.location.href = "http://shop.test/checkout/" + data.replace("cart has ben added:",'')
+            }
+        })
+        .catch(error => {
+            console.error("An error occurred:", error);
+        });
+
+}
