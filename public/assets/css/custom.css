@@ -64,7 +64,12 @@
     background-color: var(--first-color);
 }
 
+.colorOrange:hover {
+    color: black !important;
+}
+
 .colorOrange {
+    color: white !important;
     color: var(--first-color);
 }
 
@@ -83,10 +88,13 @@
     box-shadow: none;
     /* Remove default box shadow */
 }
-.active>.page-link, .page-link.active {
+
+.active .page-link,
+.page-link.active {
     background-color: hsl(31, 100%, 70%);
     border-color: hsl(31, 100%, 70%);
 }
+
 .dark-theme .pagination .page-item.active .page-link {
     background-color: hsl(31, 100%, 70%);
     border-color: hsl(31, 100%, 70%);
@@ -100,35 +108,140 @@
     color: white;
 }
 
-.mt-25{
+.mt-25 {
     margin-top: 250px;
 }
-.mb-25{
+
+.mb-25 {
     margin-bottom: 250px;
 }
 
 .btn {
-    background-color:hsl(31, 100%, 60%);
+    background-color: hsl(31, 100%, 60%);
     border-color: hsl(31, 100%, 60%);
 }
+
 .btn:hover {
-    background-color:hsl(31, 100%, 70%);
+    background-color: hsl(31, 100%, 70%);
     border-color: hsl(31, 100%, 70%);
 }
-.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
-    background-color:hsl(31, 100%, 60%);
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+    background-color: hsl(31, 100%, 60%);
     border-color: hsl(31, 100%, 60%);
 }
+
 @media only screen and (min-width: 768px) {
-    .ms-md-25{
+    .ms-md-25 {
         margin-left: 20%;
     }
 }
 
-.filter-option-inner-inner{
+.filter-option-inner-inner {
     color: white;
 }
 
-.dropdown-item.active, .dropdown-item:active {
+.dropdown-item.active,
+.dropdown-item:active {
     background-color: hsl(31, 100%, 60%);
+}
+
+
+.checkout .row {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
+}
+
+.checkout .col-25 {
+    -ms-flex: 25%;
+    /* IE10 */
+    flex: 25%;
+}
+
+.checkout .col-50 {
+    -ms-flex: 50%;
+    /* IE10 */
+    flex: 50%;
+}
+
+.checkout .col-75 {
+    -ms-flex: 75%;
+    /* IE10 */
+    flex: 75%;
+}
+
+.checkout .col-25,
+.checkout .col-50,
+.checkout .col-75 {
+    padding: 0 16px;
+}
+
+.checkout .container {
+    background-color: var(--body-color);
+    padding: 5px 20px 15px 20px;
+    border: 1px solid hsl(0, 0%, 17%);
+    border-radius: 3px;
+}
+
+.checkout input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.checkout label {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.checkout .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+}
+
+.checkout .btn {
+    background-color: hsl(31, 100%, 60%);
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.checkout .btn:hover {
+    background-color: hsl(31, 100%, 70%);
+}
+
+.checkout span.price {
+    float: right;
+    color: hsl(31, 100%, 60%);
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+    .checkout .row {
+        flex-direction: column-reverse;
+    }
+
+    .checkout .col-25 {
+        margin-bottom: 20px;
+    }
+}
+.checkout{
+margin-top: 100px;
 }
