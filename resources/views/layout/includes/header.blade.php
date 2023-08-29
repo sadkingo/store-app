@@ -40,6 +40,9 @@
                         class="rounded-circle">
                 </a>
                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+                    @if (authUser()->user_type === 'admin')
+                        <li><a class="dropdown-item" href="{{ route('filament.admin.auth.login') }}">Admin Panel</a></li>
+                    @endif
                     <li><a class="dropdown-item" href="#">Settings</a></li>
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                     <li>
@@ -51,10 +54,12 @@
         @endauth
         <div class="nav__btns">
             <i class='bx bx-moon testimonial__perfil-name' style="cursor: pointer;" id="theme-button"></i>
+            @auth
             <div class="nav__shop" id="cart-shop">
                 <i class='bx bx-shopping-bag testimonial__perfil-name'></i>
                 <span class="total-items-cart testimonial__perfil-name"></span>
             </div>
+            @endauth
             <div class="nav__toggle" id="nav-toggle">
                 <i class='bx bx-grid-alt'></i>
             </div>
@@ -71,7 +76,9 @@
             <span class="cart__prices-total"></span>
         </div>
         <div class="d-flex justify-content-center">
-            <button class="button m-auto" onclick="">CheckOut</button>
+            {{--  <a href="{{ route('checkout') }}">  --}}
+                <button class="button m-auto" onclick="sendCart()">CheckOut</button>
+            {{--  </a>  --}}
         </div>
     </div>
 </header>
