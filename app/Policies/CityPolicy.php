@@ -13,7 +13,9 @@ class CityPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        if ($user->user_type === 'admin')
+            return true;
+        return false;
     }
 
     /**
@@ -21,7 +23,9 @@ class CityPolicy
      */
     public function view(User $user, City $city): bool
     {
-        //
+        if ($user->user_type === 'admin')
+            return true;
+        return false;
     }
 
     /**
@@ -29,7 +33,9 @@ class CityPolicy
      */
     public function create(User $user): bool
     {
-        //
+        if ($user->user_type === 'admin')
+            return true;
+        return false;
     }
 
     /**
@@ -37,7 +43,9 @@ class CityPolicy
      */
     public function update(User $user, City $city): bool
     {
-        //
+        if ($user->user_type === 'admin')
+            return true;
+        return false;
     }
 
     /**
@@ -45,7 +53,9 @@ class CityPolicy
      */
     public function delete(User $user, City $city): bool
     {
-        //
+        if ($user->user_type === 'admin')
+            return true;
+        return false;
     }
 
     /**
@@ -53,7 +63,9 @@ class CityPolicy
      */
     public function restore(User $user, City $city): bool
     {
-        //
+        if ($user->user_type === 'admin')
+            return true;
+        return false;
     }
 
     /**
@@ -61,6 +73,8 @@ class CityPolicy
      */
     public function forceDelete(User $user, City $city): bool
     {
-        //
+        if ($user->user_type === 'admin')
+            return true;
+        return false;
     }
 }
