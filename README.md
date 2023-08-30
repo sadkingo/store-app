@@ -5,17 +5,19 @@ This project focuses on creating an e-commerce application to simplify online sh
 ## Features:
 - Easy and convenient shopping experience.
 - Wide range of products and services.
-- Secure payment options, including cash and credit cards.
+- Secure payment options, including cash and credit cards.(cash only rn)
 - User accounts, order tracking, and purchase history.
 - Responsive and intuitive user interface.
 - Admin management for users and products.
-- Developed using Laravel PHP framework and MySQL.
 
-## Requirements:
-- User interface design with responsive layouts.
-- User authentication and account management.
-- Database design for users, products, and orders.
-- Product management and inventory control.
-- Secure purchase and payment processing.
-- Admin tools for user and product management.
-- Utilization of Laravel PHP framework and MySQL.
+**Development Technologies:**
+    - Utilize Laravel PHP framework for backend development.
+    - MySQL database for storing user, product, and order data.
+    - Frontend using HTML, CSS, and JavaScript.
+    - Responsive design to ensure compatibility across devices.
+    - Use the Livewire library for smooth interactive experiences.
+
+**Development Tools:**
+    - Integrated development environment: Visual Studio Code (VSCode).
+    - MySQL database.
+    - DrawSQL platform for database design.
