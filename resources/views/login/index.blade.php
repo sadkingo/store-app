@@ -19,8 +19,8 @@
                     @enderror
                 </div>
                 <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" name="remember" for="exampleCheck1">Remember me</label>
+                    <input type="checkbox" name="remember" class="form-check-input" id="rememberme">
+                    <label class="form-check-label" name="remember" for="rememberme">Remember me</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>
