@@ -13,7 +13,9 @@ class ProductImagePolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        if ($user->user_type === 'admin')
+        return true;
+    return false;
     }
 
     /**
@@ -21,7 +23,9 @@ class ProductImagePolicy
      */
     public function view(User $user, ProductImage $productImage): bool
     {
-        //
+        if ($user->user_type === 'admin')
+            return true;
+        return false;
     }
 
     /**
@@ -29,7 +33,9 @@ class ProductImagePolicy
      */
     public function create(User $user): bool
     {
-        //
+        if ($user->user_type === 'admin')
+            return true;
+        return false;
     }
 
     /**
@@ -37,7 +43,9 @@ class ProductImagePolicy
      */
     public function update(User $user, ProductImage $productImage): bool
     {
-        //
+        if ($user->user_type === 'admin')
+        return true;
+    return false;
     }
 
     /**
@@ -45,7 +53,9 @@ class ProductImagePolicy
      */
     public function delete(User $user, ProductImage $productImage): bool
     {
-        //
+        if ($user->user_type === 'admin')
+            return true;
+        return false;
     }
 
     /**
@@ -53,7 +63,9 @@ class ProductImagePolicy
      */
     public function restore(User $user, ProductImage $productImage): bool
     {
-        //
+        if ($user->user_type === 'admin')
+        return true;
+    return false;
     }
 
     /**
@@ -61,6 +73,8 @@ class ProductImagePolicy
      */
     public function forceDelete(User $user, ProductImage $productImage): bool
     {
-        //
+        if ($user->user_type === 'admin')
+        return true;
+    return false;
     }
 }
