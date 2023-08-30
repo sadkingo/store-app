@@ -355,6 +355,8 @@ function sendCart() {
                 cart = [];
                 updateCart();
                 window.location.href = "http://shop.test/checkout/" + data.replace("cart has ben added:",'')
+            }else{
+                window.location.href = "http://shop.test";
             }
         })
         .catch(error => {
