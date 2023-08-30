@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
@@ -32,4 +34,6 @@ Route::middleware('guest')->group(function ()
 Route::middleware('auth')->group(function ()
     {
     Route::get('logout', [AuthController::class, 'destroy'])->name('logout');
+    Route::post('cart',[CartController::class , 'store']);
+    Route::get('checkout',[CheckoutController::class , 'create'])->name('checkout');
     });
