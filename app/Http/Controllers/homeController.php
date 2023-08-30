@@ -15,7 +15,7 @@ class homeController extends Controller
         $newProducts = Product::latest()
         ->limit(4)
         ->get();
-
+        
         // todo
         // select fetured products
         $featuredProducts = $products->take(3);
