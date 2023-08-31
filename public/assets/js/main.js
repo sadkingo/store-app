@@ -345,18 +345,22 @@ function sendCart() {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(cart),
-        }).then(response => {
+        })
+        .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                cart = [];
+                updateCart();
+                window.location.href = "http://shop.test";
             }
             return response.text();
-        }).then(data => {
+        })
+        .then(data => {
             if (data.startsWith("cart has ben added:")){
                 cart = [];
                 updateCart();
                 window.location.href = "http://shop.test/checkout/" + data.replace("cart has ben added:",'')
             }else{
-                window.location.href = "http://shop.test";
+                // window.location.href = "http://shop.test";
             }
         })
         .catch(error => {
