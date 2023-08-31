@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreCartRequest;
 use App\Http\Requests\UpdateCartRequest;
 use App\Models\CartItem;
+use Illuminate\Http\Request;
 
 class CartController extends Controller
     {
@@ -28,12 +30,23 @@ class CartController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCartRequest $request)
+    public function store(Request $request)
         {
+            // validate
+        $rule = [
+            'id'            => 'required|numeric|exists:products,id',
+            'numberOfUnits' => 'required|numeric|min:0',
+        ];
+        foreach ($request->input() as $product)
+            {
+            Validator::validate($product, $rule);
+            }
+            // check if empty and the user loged in
         if (blank($request->input('0')) && authUser()->id !== null)
             {
             return 'Error';
             }
+
         // regulate product for sending
         $products = array_map(function ($product)
             {
@@ -55,7 +68,7 @@ class CartController extends Controller
             ]);
             }
 
-        return 'cart has ben added:'.$cart->id;
+        return 'cart has ben added:' . $cart->id;
         }
 
     /**
@@ -85,8 +98,8 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cart $cart)
+    public function destroy($id)
         {
-        //
+            // dd($id);
         }
     }
