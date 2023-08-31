@@ -6,18 +6,14 @@
             <div class="container rounded-3 m-auto">
                 <div class="swiper mySwiper2 rounded-top-3" style="background-color: var(--first-color);">
                     <div class="swiper-wrapper text-center">
-                        <div class="swiper-slide mt-1 rounded-3 overflow-hidden h-auto">
+                        <div class="swiper-slide mt-1 rounded-3 overflow-hidden h-auto my-auto">
                             <img class="object-fit-contain" src="{{ versionedAsset("$product->image_url") }}" />
                         </div>
-                        <div class="swiper-slide">
-                            <img class="object-fit-contain" src="{{ versionedAsset('assets/img/product2.png') }}" />
+                        @foreach ($product->images as $image)
+                        <div class="swiper-slide my-auto">
+                            <img class="object-fit-contain" src="{{ versionedAsset("$image->image_url") }}" />
                         </div>
-                        <div class="swiper-slide">
-                            <img class="object-fit-contain" src="{{ versionedAsset('assets/img/product3.png') }}" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="object-fit-contain" src="{{ versionedAsset('assets/img/product4.png') }}" />
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="bg-black rounded-bottom-3">
@@ -27,18 +23,12 @@
                                 class="swiper-slide border rounded-3 border-secondary overflow-hidden h-auto text-center">
                                 <img class="object-fit-contain" src="{{ versionedAsset("$product->image_url") }}" />
                             </div>
+                            @foreach ($product->images as $image)
                             <div
                                 class="swiper-slide border rounded-3 border-secondary overflow-hidden h-auto text-center">
-                                <img class="object-fit-contain" src="{{ versionedAsset('assets/img/product2.png') }}" />
+                                <img class="object-fit-contain" src="{{ versionedAsset("$image->image_url") }}" />
                             </div>
-                            <div
-                                class="swiper-slide border rounded-3 border-secondary overflow-hidden h-auto text-center">
-                                <img class="object-fit-contain" src="{{ versionedAsset('assets/img/product3.png') }}" />
-                            </div>
-                            <div
-                                class="swiper-slide border rounded-3 border-secondary overflow-hidden h-auto text-center">
-                                <img class="object-fit-contain" src="{{ versionedAsset('assets/img/product4.png') }}" />
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
