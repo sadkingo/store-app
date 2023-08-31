@@ -22,7 +22,8 @@ class StoreCartRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'id'=>'required|numeric|exists:products,id',
+            'numberOfUnits'=>'required|numeric|min:0',
         ];
     }
 }

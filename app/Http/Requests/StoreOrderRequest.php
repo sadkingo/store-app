@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\StateCityRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreOrderRequest extends FormRequest
@@ -11,7 +12,7 @@ class StoreOrderRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +23,9 @@ class StoreOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'phone' => 'required|numeric',
+            'address' => 'required|string|min:2|max:50',
+            'city'      => ['required','string', new StateCityRule],
         ];
     }
 }
