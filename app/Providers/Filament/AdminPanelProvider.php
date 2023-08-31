@@ -68,10 +68,10 @@ class AdminPanelProvider extends PanelProvider
                 CheckIfAdmin::class,
             ])->plugin(
                 BreezyCore::make()->myProfile(
-                    shouldRegisterUserMenu: true, // Sets the 'account' link in the panel User Menu (default = true)
-                    shouldRegisterNavigation: false, // Adds a main navigation item for the My Profile page (default = false)
-                    hasAvatars: false, // Enables the avatar upload form component (default = false)
-                    slug: 'my-profile' // Sets the slug for the profile page (default = 'my-profile')
+                    shouldRegisterUserMenu: true,
+                    shouldRegisterNavigation: false,
+                    hasAvatars: false,
+                    slug: 'my-profile'
                 )->myProfileComponents(['personal_info' => MyCustomComponent::class])
             );
 
