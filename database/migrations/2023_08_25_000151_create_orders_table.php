@@ -15,8 +15,8 @@ class CreateOrdersTable extends Migration
             $table->string('address');
             $table->unsignedBigInteger('city_id');
             $table->string('phone');
-            $table->string('payment_type');
-            $table->enum('status', ['approved', 'pending', 'rejected', 'cancelled']);
+            $table->string('payment_type')->default('Cash');
+            $table->enum('status', ['approved', 'pending', 'rejected', 'cancelled'])->default('pending');
             $table->softDeletes();
             $table->timestamps();
         });
