@@ -4,5 +4,5 @@
     @include('component.product' , ['product'=>$product ,'varName'=>'products'])
     {{--  todo product images  --}}
     @include('component.product-slider', ['product' => $product])
-    @include('component.product-related')
+    @include('component.product-related', ['randomProducts', $randomProducts])
 @endsection
