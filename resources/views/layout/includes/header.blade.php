@@ -43,8 +43,11 @@
                     @if (authUser()->user_type === 'admin')
                         <li><a class="dropdown-item" href="{{ route('filament.admin.auth.login') }}">Admin Panel</a></li>
                     @endif
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    @if (authUser()->user_type === 'user')
+                        <li><a class="dropdown-item" href="{{ route('filament.dashboard.pages.dashboard') }}">Dashboard</a></li>
+                    @endif
+                    {{--  <li><a class="dropdown-item" href="#">Settings</a></li>  --}}
+                    <li><a class="dropdown-item" href="{{ route('filament.dashboard.pages.my-profile') }}">Profile</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
