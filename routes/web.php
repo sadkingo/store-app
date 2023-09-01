@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [homeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('product', ProductController::class)->only('index', 'show');
 
 
