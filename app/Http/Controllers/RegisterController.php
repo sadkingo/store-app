@@ -32,7 +32,7 @@ class RegisterController extends Controller
 
        $user = User::create($requestValidated);
         Auth::login($user);
-        return redirect()->intended();
+        return to_route('home');
         }
 
 
