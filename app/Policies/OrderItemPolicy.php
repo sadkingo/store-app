@@ -13,7 +13,9 @@ class OrderItemPolicy
      */
     public function viewAny(User $user): bool
     {
-        if ($user->user_type === 'admin')
+        if ($user->user_type === 'admin'
+        || request()->segment(1) ==='dashboard'
+        || request()->segment(1) ==='livewire' )
             return true;
         return false;
     }
@@ -23,7 +25,9 @@ class OrderItemPolicy
      */
     public function view(User $user, OrderItem $orderItem): bool
     {
-        if ($user->user_type === 'admin')
+        if ($user->user_type === 'admin'
+        || request()->segment(1) ==='dashboard'
+        || request()->segment(1) ==='livewire' )
             return true;
         return false;
     }
@@ -43,7 +47,9 @@ class OrderItemPolicy
      */
     public function update(User $user, OrderItem $orderItem): bool
     {
-        if ($user->user_type === 'admin')
+        if ($user->user_type === 'admin'
+        || request()->segment(1) ==='dashboard'
+        || request()->segment(1) ==='livewire' )
             return true;
         return false;
     }
@@ -53,7 +59,9 @@ class OrderItemPolicy
      */
     public function delete(User $user, OrderItem $orderItem): bool
     {
-        if ($user->user_type === 'admin')
+        if ($user->user_type === 'admin'
+        || request()->segment(1) ==='dashboard'
+        || request()->segment(1) ==='livewire' )
             return true;
         return false;
     }

@@ -94,7 +94,10 @@ class OrderResource extends Resource
             OrderRelationManager::class,
         ];
     }
-
+    public static function getEloquentQuery(): Builder
+    {
+        return static::getModel()::query()->where('user_id', authUser()->id);
+    }
     public static function getPages(): array
     {
         return [

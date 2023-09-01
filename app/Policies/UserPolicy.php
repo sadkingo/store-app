@@ -42,7 +42,7 @@ class UserPolicy
      */
     public function update(User $user, User $model) : bool
         {
-            if ($user->user_type === 'admin')
+            if ($user->user_type === 'admin' )
             return true;
         return false;
         }
