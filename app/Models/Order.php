@@ -15,6 +15,7 @@ class Order extends Model
         'address',
         'city_id',
         'phone',
+        'status',
     ];
     public function user()
     {
