@@ -339,7 +339,7 @@ function updateCartHTML() {
 
 // sending data to route('cart') Post
 function sendCart() {
-    fetch('http://shop.test/cart', {
+    fetch(websiteUrl+'/cart', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -350,7 +350,7 @@ function sendCart() {
             if (!response.ok) {
                 cart = [];
                 updateCart();
-                window.location.href = "http://shop.test";
+                window.location.href = websiteUrl;
             }
             return response.text();
         })
@@ -358,9 +358,9 @@ function sendCart() {
             if (data.startsWith("cart has ben added:")){
                 cart = [];
                 updateCart();
-                window.location.href = "http://shop.test/checkout/" + data.replace("cart has ben added:",'')
+                window.location.href = websiteUrl+"/checkout/" + data.replace("cart has ben added:",'')
             }else{
-                // window.location.href = "http://shop.test";
+                window.location.href = websiteUrl;
             }
         })
         .catch(error => {

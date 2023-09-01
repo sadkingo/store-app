@@ -57,7 +57,8 @@
 <script>
     const logedInUser = [
     "{{ authUser()?->id }}"
-    ]
+    ];
+    const websiteUrl = "{{ route('home') }}";
 </script>
 @stack('scripts')
 <script src="{{ versionedAsset('assets/js/main.js')}}"></script>
