@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class homeController extends Controller
+class HomeController extends Controller
 {
     public function index()
     {
@@ -15,7 +15,7 @@ class homeController extends Controller
         $newProducts = Product::latest()
         ->limit(4)
         ->get();
-        
+
         // todo
         // select fetured products
         $featuredProducts = $products->take(3);
