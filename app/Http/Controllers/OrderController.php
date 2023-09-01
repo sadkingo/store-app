@@ -65,7 +65,7 @@ class OrderController extends Controller
         }
 
         $cart->delete();
-        return to_route('filament.dashboard.pages.dashboard');
+        return to_route('filament.dashboard.resources.orders.index');
     }
 
     /**
